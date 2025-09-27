@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamshid Jabborov – Software Engineer (jamecodestuff.xyz)</title>
+    <meta name="description" content="Jamshid Jabborov – Software Engineer. Projects, essays, books I'm reading, and an interactive interest graph." />
+    <meta name="keywords" content="Jamshid Jabborov, software engineer, projects, essays, books, AI, engineering, philosophy" />
+    <link rel="canonical" href="https://jamecodestuff.xyz/" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:site_name" content="jamecodestuff.xyz" />
+    <meta property="og:title" content="Jamshid Jabborov – Software Engineer" />
+    <meta property="og:description" content="Projects, essays, books I'm reading, and an interactive interest graph." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jamecodestuff.xyz/" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jamshid Jabborov – Software Engineer" />
+    <meta name="twitter:description" content="Projects, essays, books I'm reading, and an interactive interest graph." />
+    <meta name="twitter:image" content="https://jamecodestuff.xyz/og-image.png" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Jamshid Jabborov",
+            "url": "https://jamecodestuff.xyz/",
+            "description": "Projects, essays, books and interactive interest graph by Jamshid Jabborov.",
+            "publisher": {
+                "@type": "Person",
+                "name": "Jamshid Jabborov",
+                "jobTitle": "Software Engineer"
+            },
+            "inLanguage": "en",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://jamecodestuff.xyz/?q={search_term}",
+                "query-input": "required name=search_term"
+            }
+        }
+        </script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">Home</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#essays" class="nav-link">Essays</a>
+                <a href="#books" class="nav-link">Books</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <section id="home" class="section active">
+            <div class="container">
+                <div class="intro-layout">
+                    <div class="intro-content">
+                        <h1 class="intro-title">Hello, I'm Jamshid Jabborov</h1>
+                        <p class="intro-subtitle">Software Engineer, 23</p>
+                        <div class="intro-description">
+                            <p>I like to build stuff.</p>
+                            <p> Currently automating the world at <a href="https://datox.ai" target="_blank">datox.ai</a></p>
+                        </div>
+                        <!-- <div class="intro-links">
+                            <a href="#projects" class="link-button">View Projects</a>
+                            <a href="#essays" class="link-button">Read Essays</a>
+                        </div> -->
+                    </div>
+                    <div class="intro-visual">
+                        <div class="network-container">
+                            <div id="networkGraph" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Home lists (minimal, inline style like essays) -->
+                <div class="home-lists">
+                    <div class="home-list-block">
+                        <h2 class="home-list-title">Recent Projects</h2>
+                        <ul class="home-list">
+                            <li class="home-list-item">
+                                <a href="#projects" class="home-list-link">Project One</a>
+                                <p class="home-list-desc">Lightweight example showcasing core stack.</p>
+                            </li>
+                            <li class="home-list-item">
+                                <a href="#projects" class="home-list-link">Project Two</a>
+                                <p class="home-list-desc">Exploring performance & optimization.</p>
+                            </li>
+                            <li class="home-list-item">
+                                <a href="#projects" class="home-list-link">Project Three</a>
+                                <p class="home-list-desc">A small experiment in UI polish.</p>
+                            </li>
+                        </ul>
+                        <a href="#projects" class="home-list-more">Show more →</a>
+                    </div>
+                    <div class="home-list-block">
+                        <h2 class="home-list-title">Recent Essays</h2>
+                        <ul class="home-list">
+                            <li class="home-list-item">
+                                <a href="#essays" class="home-list-link">On Building Better Software</a>
+                                <p class="home-list-desc">Thoughts on crafting software that stands the test of time.</p>
+                            </li>
+                            <li class="home-list-item">
+                                <a href="#essays" class="home-list-link">The Future of Web Development</a>
+                                <p class="home-list-desc">Where tooling platforms & ecosystems are heading.</p>
+                            </li>
+                            <li class="home-list-item">
+                                <a href="#essays" class="home-list-link">Learning in Public</a>
+                                <p class="home-list-desc">Sharing as an accelerant for growth & clarity.</p>
+                            </li>
+                        </ul>
+                        <a href="#essays" class="home-list-more">Show more →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Selected things I've built, explored, or am actively refining.</p>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3 class="project-title">Project One</h3>
+                        <p class="project-description">A brief description of what this project does and the technologies used to build it.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <h3 class="project-title">Project Two</h3>
+                        <p class="project-description">Another project description highlighting the key features and impact.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </article>
+                    
+                    <article class="project-card">
+                        <h3 class="project-title">Project Three</h3>
+                        <p class="project-description">A third project showcasing different skills and technologies.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">GitHub</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="books" class="section">
+            <div class="container">
+                <h2 class="section-title">Books</h2>
+                <p class="section-subtitle">A living log of ideas & stories shaping how I think about engineering, systems, and people.</p>
+                <div class="books-meta"><a class="goodreads-link" href="https://www.goodreads.com/" target="_blank" rel="noopener">Goodreads profile →</a></div>
+                <div class="books-list">
+                    <!-- Core / thinking -->
+                    <article class="book-item">
+                        <h3 class="book-title">The Art of Doing Science and Engineering <span class="book-author">Richard Hamming</span><span class="book-rating" aria-label="5 of 5 stars">★★★★★</span></h3>
+                        <p class="book-note">On curiosity, problem framing, and building a career around important questions.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">The Beginning of Infinity <span class="book-author">David Deutsch</span><span class="book-rating" aria-label="5 of 5 stars">★★★★★</span></h3>
+                        <p class="book-note">Optimism, explanations, and the open-ended nature of progress.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">The Philosophy Book: Big Ideas Simply Explained <span class="book-author">DK</span><span class="book-rating" aria-label="3 of 5 stars">★★★☆☆</span></h3>
+                        <p class="book-note">Concise survey of major thinkers & frameworks—handy for cross‑discipline links.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">Superintelligence: Paths, Dangers, Strategies <span class="book-author">Nick Bostrom</span><span class="book-rating" aria-label="4 of 5 stars">★★★★☆</span></h3>
+                        <p class="book-note">Strategic thinking about AI trajectories & long‑term alignment risk.</p>
+                    </article>
+                    <!-- Fiction / narrative -->
+                    <article class="book-item">
+                        <h3 class="book-title">I’m Thinking of Ending Things <span class="book-author">Iain Reid</span><span class="book-rating" aria-label="4 of 5 stars">★★★★☆</span></h3>
+                        <p class="book-note">Psychological tension & ambiguity—unreliable perception as narrative device.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">The Picture of Dorian Gray <span class="book-author">Oscar Wilde</span><span class="book-rating" aria-label="4 of 5 stars">★★★★☆</span></h3>
+                        <p class="book-note">Aestheticism, vanity, and moral decay—still sharp.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">Frankenstein <span class="book-author">Mary Shelley</span><span class="book-rating" aria-label="5 of 5 stars">★★★★★</span></h3>
+                        <p class="book-note">Creation, responsibility, and the human side of technological overreach.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">Hercule Poirot’s Christmas <span class="book-author">Agatha Christie</span><span class="book-rating" aria-label="4 of 5 stars">★★★★☆</span></h3>
+                        <p class="book-note">Classic closed‑circle structure; economical clue placement.</p>
+                    </article>
+                    <article class="book-item">
+                        <h3 class="book-title">The Time Machine / The War of the Worlds <span class="book-author">H. G. Wells</span><span class="book-rating" aria-label="4 of 5 stars">★★★★☆</span></h3>
+                        <p class="book-note">Proto‑sci‑fi lenses on class, evolution, and invasion anxieties.</p>
+                    </article>
+                    <!-- Series (aggregated) -->
+                    <article class="book-item book-series">
+                        <h3 class="book-title">Harry Potter (Series) <span class="book-author">J. K. Rowling</span><span class="book-rating" aria-label="series ratings">↴</span></h3>
+                        <ul class="book-sublist">
+                            <li><strong>Sorcerer’s Stone</strong> <span class="rating-inline" aria-label="5 stars">★★★★★</span> – tone setting & intro to world.</li>
+                            <li><strong>Chamber of Secrets</strong> <span class="rating-inline" aria-label="4 stars">★★★★☆</span> – tighter mystery, darker hints.</li>
+                            <li><strong>Prisoner of Azkaban</strong> <span class="rating-inline" aria-label="5 stars">★★★★★</span> – favorite arc; time loop elegance.</li>
+                            <li><strong>Goblet of Fire</strong> <span class="rating-inline" aria-label="5 stars">★★★★★</span> – tournament world‑building.</li>
+                            <li><strong>Order of the Phoenix</strong> <span class="rating-inline" aria-label="5 stars">★★★★★</span> – institutional friction.</li>
+                            <li><strong>Half‑Blood Prince</strong> <span class="rating-inline" aria-label="4 stars">★★★★☆</span> – memory structure & foreshadowing.</li>
+                            <li><strong>Deathly Hallows</strong> <span class="rating-inline" aria-label="5 stars">★★★★★</span> – payoff & mythology closure.</li>
+                        </ul>
+                    </article>
+                    <article class="book-item book-series">
+                        <h3 class="book-title">The Lord of the Rings (with Hobbit) <span class="book-author">J. R. R. Tolkien</span><span class="book-rating" aria-label="series ratings">↴</span></h3>
+                        <ul class="book-sublist">
+                            <li><strong>The Hobbit</strong> <span class="rating-inline" aria-label="4 stars">★★★★☆</span> – lighter cadence; adventure pacing.</li>
+                            <li><strong>Fellowship</strong> <span class="rating-inline" aria-label="4 stars">★★★★☆</span> – mythic journey opens.</li>
+                            <li><strong>The Two Towers</strong> <span class="rating-inline" aria-label="4 stars">★★★★☆</span> – split narrative & escalation.</li>
+                            <li><strong>Return of the King</strong> <span class="rating-inline" aria-label="5 stars">★★★★★</span> – closure & legend tone.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="essays" class="section">
+            <div class="container">
+                <h2 class="section-title">Essays</h2>
+                <p class="section-subtitle">Thinking in public—notes & longer pieces on software, tools, learning, and reasoning.</p>
+                <div class="essays-list">
+                    <article class="essay-item">
+                        <h3 class="essay-title">
+                            <a href="#" class="essay-link">On Building Better Software</a>
+                        </h3>
+                        <p class="essay-excerpt">Thoughts on software engineering practices, clean code, and building maintainable systems...</p>
+                        <time class="essay-date">September 2025</time>
+                    </article>
+                    
+                    <article class="essay-item">
+                        <h3 class="essay-title">
+                            <a href="#" class="essay-link">The Future of Web Development</a>
+                        </h3>
+                        <p class="essay-excerpt">Exploring emerging trends in web technologies and what they mean for developers...</p>
+                        <time class="essay-date">August 2025</time>
+                    </article>
+                    
+                    <article class="essay-item">
+                        <h3 class="essay-title">
+                            <a href="#" class="essay-link">Learning in Public</a>
+                        </h3>
+                        <p class="essay-excerpt">Why sharing your learning journey can accelerate growth and help others...</p>
+                        <time class="essay-date">July 2025</time>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Always open to interesting problems, collaborations, or just a good conversation.</p>
+                <div class="contact-content">
+                    <p class="contact-description">
+                        I'm always interested in hearing about new opportunities, interesting projects, or just having a conversation about technology and ideas.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:your.email@example.com" class="contact-link">Email</a>
+                        <a href="https://github.com/yourusername" class="contact-link">GitHub</a>
+                        <a href="https://linkedin.com/in/yourusername" class="contact-link">LinkedIn</a>
+                        <a href="https://twitter.com/yourusername" class="contact-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Jamshid Jabborov.</p>
+            <p class="footer-text">Built with curiosity and a lot of caffeine.</p>
+        </div>
+    </footer>
+
+    <!-- D3.js (force simulation) -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
