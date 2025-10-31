@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corne Keyboard Build – Jamshid Jabborov (jamecodestuff.xyz)</title>
+    <meta name="description" content="A detailed journey of building a custom split keyboard from scratch - from choosing components to soldering and 3D printing the case." />
+    <meta name="keywords" content="corne keyboard, mechanical keyboard, DIY, split keyboard, custom keyboard build" />
+    <link rel="canonical" href="https://jamecodestuff.xyz/projects/corne-keyboard-build.html" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:site_name" content="jamecodestuff.xyz" />
+    <meta property="og:title" content="Corne Keyboard Build – Jamshid Jabborov" />
+    <meta property="og:description" content="A detailed journey of building a custom split keyboard from scratch - from choosing components to soldering and 3D printing the case." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jamecodestuff.xyz/projects/corne-keyboard-build.html" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Corne Keyboard Build – Jamshid Jabborov" />
+    <meta name="twitter:description" content="A detailed journey of building a custom split keyboard from scratch - from choosing components to soldering and 3D printing the case." />
+    <meta name="twitter:image" content="https://jamecodestuff.xyz/og-image.png" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../" class="nav-logo">Home</a>
+            <div class="nav-links">
+                <a href="../" class="nav-link">Home</a>
+                <a href="../projects/" class="nav-link">Projects</a>
+                <a href="../essays/" class="nav-link">Essays</a>
+                <a href="../#books" class="nav-link">Books</a>
+                <a href="../#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <article class="section active">
+            <div class="container">
+                <header class="project-header">
+                    <nav class="project-breadcrumb">
+                        <a href="../projects/">Projects</a> / <span>Corne Keyboard Build</span>
+                    </nav>
+                    <h1 class="project-title-page">Corne Keyboard Build</h1>
+                    <div class="project-meta-page">
+                        <time class="project-date">December 15, 2024</time>
+                        <div class="project-tech">
+                            <span class="tech-tag">Hardware</span>
+                            <span class="tech-tag">Soldering</span>
+                            <span class="tech-tag">3D Printing</span>
+                            <span class="tech-tag">Electronics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/jamshid17/corne-config" class="project-link" target="_blank">
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#gallery" class="project-link">
+                                <span>Gallery</span>
+                            </a>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="project-hero">
+                    <div class="hero-image">
+                        <img src="https://raw.githubusercontent.com/jamshid17/photos/refs/heads/main/IMG_3953%202.jpg" alt="Finished Corne Keyboard" />
+                    </div>
+                    <div class="hero-info">
+                        <div class="project-overview">
+                            <h2>Project Overview</h2>
+                            <p>A custom split mechanical keyboard built from scratch using the Corne v3 design. This project involved component selection, PCB soldering, firmware programming, and 3D printing a custom case.</p>
+                        </div>
+                        <div class="project-specs">
+                            <h3>Specifications</h3>
+                            <ul>
+                                <li><strong>Layout:</strong> 42-key split ortholinear</li>
+                                <li><strong>Switches:</strong> Akko Penguin Silent (tactile)</li>
+                                <li><strong>Keycaps:</strong> DSA profile blank black</li>
+                                <li><strong>Connectivity:</strong> Wireless (Bluetooth)</li>
+                                <li><strong>Firmware:</strong> ZMK</li>
+                                <li><strong>Case:</strong> 3D printed PLA</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <section class="project-section">
+                        <h2>Motivation</h2>
+                        <p class="section-lead">In early October, I decided I wanted to build a split keyboard. I first encountered such keyboards on <a href="https://t.me/shakhzodme">Shahzod's telegram channel</a>, but the real inspiration came from a YouTube video where someone built a keyboard completely from scratch.</p>
+
+                        <p>After watching more similar videos and discovering amazing communities on Reddit (<a href="https://www.reddit.com/r/crkbd/" target="_blank">r/crkbd</a>, <a href="https://www.reddit.com/r/ErgoMechKeyboards/" target="_blank">r/ErgoMechKeyboards</a>), seeing different people's keyboards every day, I finally decided to build my own.</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Design Choices</h2>
+                        <p>First, I needed to choose exactly what kind of keyboard to build. There are many types on the market, but some are more popular than others, like the Corne, Lily58, or Kinesis.</p>
+
+                        <div class="design-comparison">
+                            <div class="design-option">
+                                <img src="https://i.ytimg.com/vi/JHJPKYOqTIM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDZI3oLcSFwuTzKNsM2Tz1nupKKxg" alt="Lily58 keyboard" />
+                                <div class="option-info">
+                                    <h4>Lily58</h4>
+                                    <p>58-key layout with number row</p>
+                                </div>
+                            </div>
+
+                            <div class="design-option">
+                                <img src="https://cdn.myshoptet.com/usr/www.ergo-product.cz/user/shop/big/6698-7_kinesis-advantage360-signature-kailh-clicky-white.jpg?66601372" alt="Kinesis keyboard" />
+                                <div class="option-info">
+                                    <h4>Kinesis</h4>
+                                    <p>Full-featured ergonomic layout</p>
+                                </div>
+                            </div>
+
+                            <div class="design-option selected">
+                                <img src="https://keebd.com/cdn/shop/products/Corne-Cherry-v3-RGB-Keyboard-Kit-KEEBD-1664353997.jpg?v=1664353999" alt="Corne v3 keyboard" />
+                                <div class="option-info">
+                                    <h4>Corne v3 ✓</h4>
+                                    <p>42-key minimalist split layout</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p>The Lily58 and Kinesis seemed to have too many keys for me, and I wanted something new, so I chose to build the "Corne v3".</p>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Components & Sourcing</h2>
+                        
+                        <div class="component-grid">
+                            <div class="component-card">
+                                <h4>PCB Kit</h4>
+                                <img src="https://ae01.alicdn.com/kf/S3d3cb95bfa7f4f0eb804a292df78fe2bX.jpg_960x960.jpg" alt="Keyboard kit components" />
+                                <p>Corne V3 Mx Choc Crkbd Split Keyboard kit from Taobao (~$30)</p>
+                                <ul>
+                                    <li>2x PCBs with RGB underglow</li>
+                                    <li>2x Pro Micro compatible controllers</li>
+                                    <li>Diodes and resistors</li>
+                                    <li>OLED displays</li>
+                                </ul>
+                            </div>
+
+                            <div class="component-card">
+                                <h4>Switches</h4>
+                                <img src="https://kprepublic.com/cdn/shop/products/Sdbf1b853dd6142a1b7fd561bbd259bbeI.jpg?v=1679214346&width=600" alt="Penguin Silent switches" />
+                                <p>Akko Penguin Silent switches (~$15)</p>
+                                <ul>
+                                    <li>Tactile, silent operation</li>
+                                    <li>62g actuation force</li>
+                                    <li>Hot-swappable MX compatible</li>
+                                </ul>
+                            </div>
+
+                            <div class="component-card">
+                                <h4>Keycaps</h4>
+                                <img src="https://dailyclack.com/cdn/shop/products/exampleA_3ed3089f-7824-4c5a-8676-89dc9f01238d.jpg?v=1633575018" alt="DSA blank black keycaps" />
+                                <p>DSA blank black keycaps x40 (~$7)</p>
+                                <ul>
+                                    <li>Uniform profile</li>
+                                    <li>Minimalist aesthetic</li>
+                                    <li>PBT plastic construction</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sourcing-note">
+                            <p><strong>Sourcing Strategy:</strong> After not finding kits locally in Uzbekistan, I searched international platforms. While AliExpress seemed more reliable, Taobao was significantly cheaper (almost half the price), so I ordered the main kit from Taobao and accessories from AliExpress.</p>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Build Process</h2>
+
+                        <div class="build-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <h4>SMD Component Soldering</h4>
+                                    <img src="https://devpew.com/blog/corne-eng/images/diodessmd.png" alt="SMD diodes" />
+                                    <p>Started with the most challenging part - soldering tiny SMD diodes and resistors. Initially intimidated by the component size, I got help from a relative experienced in electronics. This turned out to be the most interesting part of the build.</p>
+                                    <div class="challenge">
+                                        <strong>Challenge:</strong> Never soldered before, components extremely small
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <h4>Microcontroller Installation</h4>
+                                    <img src="https://kriscables.com/wp-content/uploads/2021/11/DSC03200-2-scaled.jpg" alt="Pro Micro controller" />
+                                    <p>Attached the Pro Micro controllers and added batteries for wireless operation. Unfortunately burned out one controller during the process and had to wait 15 days for a replacement.</p>
+                                    <div class="challenge">
+                                        <strong>Setback:</strong> Burned out microcontroller, 15-day delay for replacement
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <h4>Firmware Flashing</h4>
+                                    <img src="https://img.buzzfeed.com/buzzfeed-static/static/2023-07/21/2/asset/59f71a3908ac/anigif_sub-buzz-4179-1689906701-13_preview.gif?output-quality=auto&output-format=auto&downsize=360:*" alt="Flashing firmware animation" />
+                                    <p>The moment of truth - flashing ZMK firmware to test the soldering work. Initial attempt resulted in only 4 working keys out of 42, causing near panic. The issue was using the wrong firmware version.</p>
+                                    <div class="challenge">
+                                        <strong>Crisis:</strong> Only 4 keys working initially - wrong firmware version
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <h4>3D Printing the Case</h4>
+                                    <img src="https://media.printables.com/media/prints/260637/images/2354419_63dab1b3-2bfa-4301-83be-9bb7ae9c8c1e/thumbs/inside/1600x1200/png/img_8844_s.webp" alt="3D printed keyboard case" />
+                                    <p>Downloaded case model from printables.com but encountered scaling issues. The printer was somehow reducing dimensions, requiring multiple test prints and manual scaling adjustments.</p>
+                                    <div class="challenge">
+                                        <strong>Frustration:</strong> 5 failed prints due to scaling issues
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-section" id="gallery">
+                        <h2>Build Gallery</h2>
+                        <div class="image-gallery">
+                            <div class="gallery-item">
+                                <img src="https://raw.githubusercontent.com/jamshid17/photos/refs/heads/main/IMG_3953%202.jpg" alt="Finished Corne Keyboard" />
+                                <p>Final assembled keyboard</p>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://raw.githubusercontent.com/jamshid17/photos/refs/heads/main/IMG_3955_2.jpg" alt="Corne keyboard in use" />
+                                <p>Keyboard in daily use setup</p>
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://raw.githubusercontent.com/jamshid17/photos/refs/heads/main/IMG_3954.jpg" alt="Close-up of Corne keyboard" />
+                                <p>Close-up detail view</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Technical Challenges & Solutions</h2>
+                        <div class="challenges-grid">
+                            <div class="challenge-card">
+                                <h4>SMD Soldering Precision</h4>
+                                <p><strong>Problem:</strong> Never soldered before, components extremely small</p>
+                                <p><strong>Solution:</strong> Partnered with experienced relative, learned through hands-on practice</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h4>Firmware Compatibility</h4>
+                                <p><strong>Problem:</strong> Only 4/42 keys working after initial flash</p>
+                                <p><strong>Solution:</strong> Research on Reddit revealed wrong firmware version, reflashed with correct ZMK build</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h4>3D Print Scaling</h4>
+                                <p><strong>Problem:</strong> Printed cases consistently too small despite correct model dimensions</p>
+                                <p><strong>Solution:</strong> Manual scaling compensation (131-140%) after multiple test prints</p>
+                            </div>
+                            <div class="challenge-card">
+                                <h4>Component Failure</h4>
+                                <p><strong>Problem:</strong> Burned out microcontroller during assembly</p>
+                                <p><strong>Solution:</strong> Ordered replacement, improved handling procedures for sensitive components</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Future Improvements</h2>
+                        <div class="improvements-list">
+                            <div class="improvement-item">
+                                <h4>OLED Screen Integration</h4>
+                                <p>The kit included OLED displays, but ZMK firmware doesn't support them yet. Planning to migrate to QMK for screen functionality showing layer status and typing stats.</p>
+                            </div>
+                            <div class="improvement-item">
+                                <h4>RGB LED Debugging</h4>
+                                <p>Soldered RGB LEDs but only one is functioning. Need to troubleshoot the LED chain and potentially re-solder connections.</p>
+                            </div>
+                            <div class="improvement-item">
+                                <h4>Tenting System</h4>
+                                <p>Planning to add adjustable tenting legs for better ergonomics. Considering both 3D printed and commercial solutions for optimal wrist positioning.</p>
+                                <div class="improvement-images">
+                                    <img src="https://kriscables.com/wp-content/uploads/2023/07/DSC07806-2-scaled.jpg" alt="Keyboard with tenting legs" />
+                                    <img src="https://typeractive.xyz/cdn/shop/files/new-tenting_1946x.jpg?v=1705869011" alt="Alternative tenting solution" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Project Costs</h2>
+                        <div class="cost-breakdown">
+                            <div class="cost-item">
+                                <span class="cost-name">Corne V3 Mx Choc Crkbd Split Keyboard kit</span>
+                                <span class="cost-price">~$30</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-name">Akko Penguin Silent switches x42</span>
+                                <span class="cost-price">~$15</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-name">DSA blank black keycaps x40</span>
+                                <span class="cost-price">$7</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-name">3D printing filament</span>
+                                <span class="cost-price">~$5</span>
+                            </div>
+                            <div class="cost-total">
+                                <span class="cost-name"><strong>Total Project Cost</strong></span>
+                                <span class="cost-price"><strong>~$57</strong></span>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-section">
+                        <h2>Lessons Learned</h2>
+                        <div class="lessons-grid">
+                            <div class="lesson-item">
+                                <h4>Start Small with Hardware</h4>
+                                <p>SMD soldering requires practice. Consider starting with through-hole components or getting help for your first SMD project.</p>
+                            </div>
+                            <div class="lesson-item">
+                                <h4>Firmware Research is Critical</h4>
+                                <p>Spend time understanding firmware options before building. QMK vs ZMK have different feature sets and compatibility requirements.</p>
+                            </div>
+                            <div class="lesson-item">
+                                <h4>3D Printing Calibration</h4>
+                                <p>Test print scaling and tolerances before committing to long prints. Printer calibration saves time and materials.</p>
+                            </div>
+                            <div class="lesson-item">
+                                <h4>Community Resources</h4>
+                                <p>Reddit communities like r/crkbd and r/ErgoMechKeyboards are invaluable for troubleshooting and inspiration.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <footer class="project-footer">
+                    <div class="project-navigation">
+                        <a href="../projects/" class="project-nav-link">← Back to Projects</a>
+                        <a href="../projects/" class="project-nav-link">More Projects →</a>
+                    </div>
+                    
+                    <div class="project-share">
+                        <h3>Share this project</h3>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=Corne%20Keyboard%20Build&url=https://jamecodestuff.xyz/projects/corne-keyboard-build.html" class="share-button">Twitter</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://jamecodestuff.xyz/projects/corne-keyboard-build.html" class="share-button">LinkedIn</a>
+                            <a href="mailto:?subject=Corne%20Keyboard%20Build&body=Check%20out%20this%20custom%20keyboard%20build:%20https://jamecodestuff.xyz/projects/corne-keyboard-build.html" class="share-button">Email</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Jamshid Jabborov.</p>
+            <p class="footer-text">Built with curiosity and a lot of caffeine.</p>
+        </div>
+    </footer>
+
+    <style>
+        /* Project page specific styles */
+        .project-header {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .project-breadcrumb {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-breadcrumb a {
+            color: #4a5568;
+            text-decoration: none;
+        }
+
+        .project-breadcrumb a:hover {
+            color: #1a202c;
+        }
+
+        .project-title-page {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .project-meta-page {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-date {
+            color: #718096;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background-color: #e2e8f0;
+            color: #4a5568;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            background-color: #1a202c;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .project-link:hover {
+            background-color: #2d3748;
+        }
+
+        .project-hero {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-overview h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .project-overview p {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .project-specs {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .project-specs h3 {
+            margin-bottom: 1rem;
+            color: #1a202c;
+            font-size: 1.2rem;
+        }
+
+        .project-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+        }
+
+        .project-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-section {
+            margin-bottom: 4rem;
+        }
+
+        .project-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+        }
+
+        .section-lead {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: #4a5568;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .design-comparison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .design-option {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .design-option.selected {
+            border-color: #48bb78;
+        }
+
+        .design-option img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .option-info {
+            padding: 1rem;
+        }
+
+        .option-info h4 {
+            margin-bottom: 0.5rem;
+            color: #1a202c;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .component-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background-color: #ffffff;
+        }
+
+        .component-card h4 {
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .component-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .component-card ul {
+            margin-top: 1rem;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .sourcing-note {
+            background-color: #e6fffa;
+            border: 1px solid #81e6d9;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .build-timeline {
+            position: relative;
+        }
+
+        .build-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 4rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background-color: #1a202c;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 1rem;
+            color: #1a202c;
+            font-size: 1.25rem;
+        }
+
+        .timeline-content img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .challenge {
+            background-color: #fed7d7;
+            border: 1px solid #fc8181;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 1rem;
+            color: #742a2a;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item p {
+            margin-top: 1rem;
+            color: #718096;
+            font-style: italic;
+        }
+
+        .challenges-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .challenge-card {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .challenge-card h4 {
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .improvements-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .improvement-item {
+            margin-bottom: 2rem;
+        }
+
+        .improvement-item h4 {
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .improvement-images {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .improvement-images img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .cost-breakdown {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            max-width: 500px;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+        }
+
+        .cost-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0 0;
+            border-top: 2px solid #4a5568;
+            margin-top: 1rem;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lesson-item {
+            background-color: #edf2f7;
+            border: 1px solid #cbd5e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .lesson-item h4 {
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .project-footer {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .project-nav-link {
+            color: #4a5568;
+            font-size: 0.95rem;
+            text-decoration: none;
+            padding: 0.5rem 0;
+        }
+
+        .project-nav-link:hover {
+            color: #1a202c;
+        }
+
+        .project-share h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .share-button {
+            padding: 0.5rem 1rem;
+            background-color: #f7fafc;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .share-button:hover {
+            background-color: #edf2f7;
+            border-color: #cbd5e0;
+            color: #1a202c;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .project-title-page {
+                font-size: 2rem;
+            }
+
+            .project-meta-page {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .design-comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                padding-left: 3rem;
+            }
+
+            .timeline-marker {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+
+            .build-timeline::before {
+                left: 15px;
+            }
+
+            .improvement-images {
+                flex-direction: column;
+            }
+
+            .improvement-images img {
+                width: 100%;
+            }
+
+            .project-navigation {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .share-buttons {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-title-page {
+                font-size: 1.75rem;
+            }
+
+            .challenges-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lessons-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

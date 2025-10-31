@@ -8,8 +8,16 @@ class SimpleRouter {
         // Handle navigation clicks
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', (e) => {
+                const href = e.target.getAttribute('href');
+                
+                // If it's an external link (doesn't start with #), let it navigate normally
+                if (!href.startsWith('#')) {
+                    return; // Don't prevent default, let the browser handle it
+                }
+                
+                // Handle internal section navigation
                 e.preventDefault();
-                const target = e.target.getAttribute('href').substring(1);
+                const target = href.substring(1);
                 this.showSection(target);
                 this.updateActiveNav(e.target);
             });
@@ -346,14 +354,14 @@ function initD3Network() {
     // weight: 1 (small) -> 4 (largest)
     const interests = [
         { label: 'Me', weight: 4, url: '#home', type: 'root' },
-        { label: 'Software Engineering', weight: 3, url: '#projects' },
-        { label: 'AI', weight: 3, url: '#projects' },
-        { label: 'Philosophy', weight: 2, url: '#essays' },
-        { label: 'Electrical Engineering', weight: 2 },
-        { label: '3D Printing', weight: 1 },
+        { label: 'Software Engineering', weight: 3, url: 'projects/' },
+        { label: 'AI', weight: 3, url: 'projects/' },
+        { label: 'Philosophy', weight: 2, url: '#books' },
+        { label: 'Electrical Engineering', weight: 2, url: 'projects/corne-keyboard-build.html' },
+        { label: '3D Printing', weight: 1, url: 'projects/corne-keyboard-build.html'},
         { label: 'Guitar', weight: 1 },
-        { label: 'Books', weight: 1, url: '#essays' },
-        { label: 'Chess', weight: 1 }
+        { label: 'Books', weight: 1, url: '#books' },
+        { label: 'Chess', weight: 1, url: "https://lichess.org/@/jamshid19" }
     ];
 
     // Build nodes & links
