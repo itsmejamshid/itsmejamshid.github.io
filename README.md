@@ -75,12 +75,3 @@ This website can be deployed to any static hosting service:
 ## License
 
 Feel free to use this template for your own personal website. No attribution required.
-
----
-
-**Next Steps:**
-1. Replace "Your Name" with your actual name
-2. Update the contact links with your real social media/email
-3. Add your actual projects and essays
-4. Customize colors/fonts if desired
-5. Deploy to your preferred hosting service
