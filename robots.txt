@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://jamecodestuff.xyz/sitemap.xml
